@@ -11,6 +11,7 @@ nav a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
 }
 nav .nav-item {
   position: absolute;
@@ -70,7 +71,7 @@ nav .nav-item.top-right {
   border-right: .15em solid white;
   animation:
     /*typing 3.5s steps(40, end),*/
-    blink-caret .75s step-end infinite;
+    blink-caret 1s step-end infinite;
 }
 /*@keyframes typing {
   from { width: 0 }
