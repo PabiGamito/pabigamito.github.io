@@ -7,6 +7,28 @@ body {
   overflow: hidden;
 }
 
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav .nav-item {
+  position: absolute;
+  padding: 15px;
+}
+nav .nav-item:hover {
+  transform: scale(1.08);
+  font-weight: bold;
+}
+nav .nav-item.top-left {
+  top: 0;
+  left: 0;
+}
+nav .nav-item.top-right {
+  top: 0;
+  right: 0;
+}
+
 .card {
   position: absolute;
   top: 50%;
@@ -27,6 +49,38 @@ body {
 .card h3 {
   font-size: 26px;
 }
+.card ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+.type-writer-text {
+  font-family: 'Lekton', sans-serif;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  margin-top: 15px;
+  /*letter-spacing: .15em;*/
+}
+.type-writer-text .txt-rotate {
+  border-right: .15em solid white;
+  animation:
+    /*typing 3.5s steps(40, end),*/
+    blink-caret .75s step-end infinite;
+}
+/*@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}*/
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
 
 .homepage-hero-module {
     border-right: none;
