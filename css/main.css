@@ -186,7 +186,7 @@ nav .nav-item.bottom-left {
 #content-wrapper section {
   background: white;
   margin: -20px 0 -20px 0;
-  /*padding: 20px;*/
+  padding: 20px 0 20px 0;
   z-index: 1000;
   display: block;
   width: 100%;

@@ -11,6 +11,16 @@ $(window).on('beforeunload', function(){
   $(window).scrollTop(0);
 });
 
+// Smooth Scroll to Anchor
+$(document).on('click', 'a', function(event){
+  event.preventDefault();
+  // Add class active for mousewheel scrolling
+  $( $.attr(this, 'href') ).addClass('active');
+  $('html, body').animate({
+      scrollTop: $( $.attr(this, 'href') ).offset().top
+  }, 500);
+});
+
 // TYPE-WRITER TEXT ANIMATION //
 var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
