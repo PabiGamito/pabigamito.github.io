@@ -40,14 +40,21 @@
 
     <nav>
       <div class="nav-item top-left">
-        <a href="#about">About me</a>
+        <a href="learn-more.html#about">About me</a>
       </div>
       <div class="nav-item top-right">
         <a href="#portfolio">Portfolio</a>
       </div>
+      <div class="nav-item bottom-left">
+        <a href="#services">My Services</a>
+      </div>
+      <div class="nav-item bottom-right">
+        <a href="#contact">Contact me</a>
+      </div>
     </nav>
 
-    <div class="homepage-hero-module">
+    <div id="landing-wrapper">
+      <!-- Video background -->
       <div class="video-container">
         <div class="filter"></div>
         <video autoplay loop class="fullScreen" id="landing-video">
@@ -58,15 +65,41 @@
           <img src="video/Love-Coding.jpg" alt="">
         </div>
       </div>
+
+      <!-- Landing page card overlay with basic info -->
+      <div class="card">
+        <h2>Hi.</h2>
+        <h2><strong>Pablo Gamito</strong></h2>
+        <h3>Full-stack Web Developer</h3>
+        <p class="type-writer-text">I enjoy <span class="txt-rotate" data-period="1000" data-rotate='[ "building things for the internet", "working with people", "learning new things", "inovating", "solving problems" ]'></span></p>
+        <button type="button" name="button">Call to Action</button>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Hi.</h2>
-      <h2><strong>Pablo Gamito</strong></h2>
-      <h3>Full-stack Web Developer</h3>
-
-      <p class="type-writer-text">I enjoy <span class="txt-rotate" data-period="1000" data-rotate='[ "building things for the internet", "working with people", "learning new things", "inovating", "solving problems" ]'></span></p>
-
+    <div id="content-wrapper">
+      <section class="transparent-background full-page">
+        <!-- Empty but used to scroll back to top - top transparent section to see landing -->
+      </section>
+      <section id="about-me" class="full-page">
+        <div class="container">
+          <h1>About Me</h1>
+        </div>
+      </section>
+      <section id="portfolio" class="full-page">
+        <div class="container">
+          <h1>Portfolio</h1>
+        </div>
+      </section>
+      <section id="services" class="full-page">
+        <div class="container">
+          <h1>Services</h1>
+        </div>
+      </section>
+      <section id="contact" class="full-page">
+        <div class="container">
+          <h1>Contact Me</h1>
+        </div>
+      </section>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
