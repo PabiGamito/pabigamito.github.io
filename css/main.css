@@ -5,6 +5,8 @@ body {
   margin: 0;
   /*height: 100vh;*/
   /*overflow: hidden;*/
+  max-width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -178,13 +180,13 @@ nav .nav-item.bottom-left {
 
 #content-wrapper {
   max-width: 100%;
-  max-width: 100vh;
+  max-width: 100vw;
 }
 
 #content-wrapper section {
   background: white;
   margin: -20px 0 -20px 0;
-  padding: 20px;
+  /*padding: 20px;*/
   z-index: 1000;
   display: block;
   width: 100%;
