@@ -21,6 +21,11 @@ $(document).on('click', 'a', function(event){
   }, 500);
 });
 
+// Learn more smooth scroll down
+$(".learn-more").on("click", function(){
+  mouseWheelScroll(-1);
+});
+
 // TYPE-WRITER TEXT ANIMATION //
 var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -88,66 +93,76 @@ var scrolling = false;
  DOMMouseScroll to work on cross browser */
 $(document).on('mousewheel DOMMouseScroll', function (e) {
   e.preventDefault(); //prevent the default mousewheel scrolling
+  //get the delta to determine the mousewheel scrol UP and DOWN
+  var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
+  mouseWheelScroll(delta);
+});
+
+function mouseWheelScroll(delta) {
   if (!scrolling) {
     scrolling = true;
     var active = $('section.active');
-    //get the delta to determine the mousewheel scrol UP and DOWN
-    var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
 
     //if the delta value is negative, the user is scrolling down
     if (delta < 0) {
-      //mousewheel down handler
-      next = active.next();
-      //check if the next section exist and animate the anchoring
-      if (next.length) {
-       /*setTimeout is here to prevent the scrolling animation
-        to jump to the topmost or bottom when
-        the user scrolled very fast.*/
-        var timer = setTimeout(function () {
-          /* animate the scrollTop by passing
-          the elements offset top value */
-          $('body, html').animate({
-            scrollTop: next.offset().top
-          }, 500, function(){
-            // Animation complete
-            scrolling = false;
-          });
-
-          // move the indicator 'active' class
-          next.addClass('active')
-            .siblings().removeClass('active');
-
-          clearTimeout(timer);
-        }, 200);
-      } else {
-        scrolling = false;
-      }
-
+      mouseWheelScrollDownHandler(active);
     } else {
-      //mousewheel up handler
-      /*similar logic to the mousewheel down handler
-      except that we are animate the anchoring
-      to the previous sibling element*/
-      prev = active.prev();
-
-      if (prev.length) {
-        var timer = setTimeout(function () {
-          $('body, html').animate({
-            scrollTop: prev.offset().top
-          }, 500, function(){
-            // Animation complete
-            scrolling = false;
-          });
-
-          prev.addClass('active')
-              .siblings().removeClass('active');
-
-          clearTimeout(timer);
-        }, 200);
-      } else {
-        scrolling = false;
-      }
-
+      mouseWheelScrollUpHandler(active);
     }
   }
-});
+}
+
+function mouseWheelScrollDownHandler(active) {
+  //mousewheel down handler
+  next = active.next();
+  //check if the next section exist and animate the anchoring
+  if (next.length) {
+   /*setTimeout is here to prevent the scrolling animation
+    to jump to the topmost or bottom when
+    the user scrolled very fast.*/
+    var timer = setTimeout(function () {
+      /* animate the scrollTop by passing
+      the elements offset top value */
+      $('body, html').animate({
+        scrollTop: next.offset().top
+      }, 500, function(){
+        // Animation complete
+        scrolling = false;
+      });
+
+      // move the indicator 'active' class
+      next.addClass('active')
+        .siblings().removeClass('active');
+
+      clearTimeout(timer);
+    }, 200);
+  } else {
+    scrolling = false;
+  }
+}
+
+function mouseWheelScrollUpHandler(active) {
+  //mousewheel up handler
+  /*similar logic to the mousewheel down handler
+  except that we are animate the anchoring
+  to the previous sibling element*/
+  prev = active.prev();
+
+  if (prev.length) {
+    var timer = setTimeout(function () {
+      $('body, html').animate({
+        scrollTop: prev.offset().top
+      }, 500, function(){
+        // Animation complete
+        scrolling = false;
+      });
+
+      prev.addClass('active')
+          .siblings().removeClass('active');
+
+      clearTimeout(timer);
+    }, 200);
+  } else {
+    scrolling = false;
+  }
+}
