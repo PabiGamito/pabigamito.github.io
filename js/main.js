@@ -12,7 +12,7 @@ $(window).on('beforeunload', function(){
 });
 
 // Smooth Scroll to Anchor
-$(document).on('click', 'a', function(event){
+$(document).on('click', 'nav a', function(event){
   event.preventDefault();
   // Add class active for mousewheel scrolling
   $( $.attr(this, 'href') ).addClass('active');
