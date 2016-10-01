@@ -123,7 +123,7 @@ nav .nav-item.bottom-left {
 }
 
 .card {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -181,7 +181,7 @@ typing is handles by JS
 }
 
 .learn-more {
-  position: fixed;
+  position: absolute;
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
@@ -224,13 +224,32 @@ typing is handles by JS
   display: block;
   width: 100%;
   width: 100vw;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  display: flex;
+  justify-content: center;
+}
+#content-wrapper section.dark {
+  background: #F2F2F2;
 }
 #content-wrapper section .container {
   width: 100%;
   max-width: 1080px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  align-self: center;
+}
+section#about h1 {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  vertical-align: middle;
+}
+section#about p {
+  font-size: 24px;
+  color: #8e8e8e;
+  font-weight: 300;
+  margin-top: 0;
 }
 .transparent-background {
   background-color : transparent!important;
