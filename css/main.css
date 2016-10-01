@@ -251,6 +251,9 @@ section#about p {
   font-weight: 300;
   margin-top: 0;
 }
+section#about p span {
+  color: black;
+}
 .transparent-background {
   background-color : transparent!important;
 }
