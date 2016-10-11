@@ -237,6 +237,11 @@ typing is handles by JS
   max-width: 1080px;
   align-self: center;
 }
+@media (max-width: 1110px) {
+  #content-wrapper section .container {
+    padding: 15px;
+  }
+}
 section#about h1 {
   font-size: 72px;
   font-weight: bold;
