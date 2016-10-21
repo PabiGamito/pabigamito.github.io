@@ -17,6 +17,9 @@
       ga('send', 'pageview');
 
     </script>
+
+    <link rel="stylesheet" href="css/loader.css">
+
     <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
@@ -40,6 +43,16 @@
     - Put link to downloadable resume
     - Cmd+P will print a resume and not webpage
     -->
+    <div class="preloader-wrapper">
+      <div class="preloader loading">
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+        <span class="slice"></span>
+      </div>
+    </div>
 
     <nav>
       <div class="nav-item top-left">
@@ -93,17 +106,48 @@
             <li><a class="soc-stackoverflow" target="_blank" href="http://stackoverflow.com/users/5091531/pabi"></a></li>
             <li><a class="soc-pinterest" target="_blank" href="https://pinterest.com/pablogamito/"></a></li>
             <li><a class="soc-linkedin" target="_blank" href="https://www.linkedin.com/in/pablo-g-6446a9125?trk=hp-identity-name"></a></li>
-            <li><a class="soc-twitter" target="_blank" href="https://twitter.com/pabigamito"></a></li>
-            <li><a class="soc-facebook soc-icon-last" target="_blank" href="https://www.facebook.com/pablo.gamito"></a></li>
+            <!-- <li><a class="soc-twitter" target="_blank" href="https://twitter.com/pabigamito"></a></li>
+            <li><a class="soc-facebook soc-icon-last" target="_blank" href="https://www.facebook.com/pablo.gamito"></a></li> -->
           </ul>
         </div>
       </section>
-      <!-- <section id="portfolio" class="full-page dark">
+
+      <section id="portfolio" class="full-page dark">
         <div class="container">
           <h1>Portfolio</h1>
+          <ul id="hexGrid">
+            <li class="hex">
+              <a class="hexIn" href="http://ilymun.org">
+                <img src="img/ilymun.jpg" alt="" />
+                <h1>ILYMUN.org</h1>
+                <p>Wordpress website for the International Lyon Model United Nations organisation</p>
+              </a>
+            </li>
+            <li class="hex">
+              <a class="hexIn" href="https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik">
+                <img src="img/linenumbers.jpg" alt="" />
+                <h1>Line Numbers for GDocs</h1>
+                <p>Chrome extension that adds the line numbering feature to Google Docs</p>
+              </a>
+            </li>
+            <li class="hex">
+              <a class="hexIn" href="#">
+                <img src="img/la-terrasse.jpg" alt="" />
+                <h1>La Terrasse Restaurant</h1>
+                <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+            </li>
+            <li class="hex">
+              <a class="hexIn" href="#">
+                <img src="img/morgan-g.jpg" alt="" />
+                <h1>Morgan G Hair Salon</h1>
+                <p>Some sample text about the article this hexagon leads to</p>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
-      <section id="services" class="full-page">
+      <!-- <section id="services" class="full-page">
         <div class="container">
           <h1>Services</h1>
         </div>

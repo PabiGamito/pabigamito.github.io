@@ -6,6 +6,14 @@ console.log("Hello fellow developer,\n" +
   "Enjoy the code :)"
 );
 
+$(document).ready(function(){
+  $(".preloader").removeClass("loading");
+  // Checks for last tile to finish animating (last animated tile is the first child)
+  $(".preloader span:first-child").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+    $(".preloader-wrapper").addClass("loaded");
+  });
+});
+
 // On reload load page from top
 $(window).on('beforeunload', function(){
   $(window).scrollTop(0);
