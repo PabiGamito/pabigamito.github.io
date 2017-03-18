@@ -14,7 +14,7 @@ $(document).ready(function(){
   });
 });
 
-// On reload load page from top
+// // On reload load page from top
 $(window).on('beforeunload', function(){
   $(window).scrollTop(0);
 });

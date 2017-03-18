@@ -180,12 +180,68 @@ typing is handles by JS
   50% { border-color: white; }
 }
 
-.learn-more {
+.icon-scroll,
+.icon-scroll:before {
   position: absolute;
-  bottom: 50px;
+  left: 50%;
+}
+.icon-scroll {
+  position: absolute;
+  bottom: 75px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
+  align-items: center;
+  text-align: center;
+  z-index: 99;
+  width: 40px;
+  height: 70px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+}
+.icon-scroll:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+}
+.icon-scroll.dark {
+  color: #8e8e8e;
+  box-shadow: inset 0 0 0 1px #8e8e8e;
+}
+.icon-scroll.dark:before {
+  background: #8e8e8e;
+}
+
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
 }
 .float {
   -webkit-animation-name: Floatingx;
@@ -196,7 +252,6 @@ typing is handles by JS
   -moz-animation-duration: 3s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: ease-in-out;
-  margin-left: 30px;
   margin-top: 5px;
 
 }
@@ -228,6 +283,7 @@ typing is handles by JS
 
   display: flex;
   justify-content: center;
+  position: relative;
 }
 #content-wrapper section.dark {
   background: #F2F2F2;
@@ -242,6 +298,16 @@ typing is handles by JS
     padding: 15px;
   }
 }
+
+
+section#about {
+  background: #ffffff;
+}
+/*section#about {
+  background-image: url(../img/pablo-gamito.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}*/
 section#about h1 {
   font-size: 72px;
   font-weight: bold;
@@ -259,6 +325,55 @@ section#about p {
 section#about p span {
   color: black;
 }
+
+section.portfolio-element {
+  color: white;
+}
+section.portfolio-element .description {
+  width: 45%;
+  float: left;
+}
+section.portfolio-element .description h1 {
+  font-size: 48px;
+  margin-bottom: 0px;
+}
+section.portfolio-element .description h2 {
+  font-size: 32px;
+  margin-top: 0px;
+  font-weight: 300;
+}
+section.portfolio-element .content {
+  position: relative;
+  width: 50%;
+  float: left;
+}
+section.portfolio-element .mockup {
+  max-width: 100%;
+  height: auto;
+}
+section.portfolio-element .mockup-content {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+  width: 90%;
+}
+section.portfolio-element .mockup-content img {
+  max-width: 100%;
+  height: auto;
+}
+section#ilymun {
+  background: #3498db;
+}
+section#cryptohub {
+  background: #00bf8f;
+}
+section#line-numbers {
+  background: #414141;
+}
+section#wake-walk {
+  background: #9544CD;
+}
+
 section#portfolio h1 {
   text-align: center;
   font-size: 36px;

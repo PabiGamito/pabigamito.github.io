@@ -114,6 +114,12 @@
 .soc-twitter:before {
   content:'\e040';
 }
+.soc-instagram {
+    background-color: #8a3ab9;
+}
+.soc-instagram:before {
+    content:'\e057';
+}
 .soc-facebook {
   background-color: #3e5b98;
 }

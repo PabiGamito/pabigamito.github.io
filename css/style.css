@@ -178,9 +178,13 @@ section.dark p {
   width: 45%;
   display: inline-block;
 }
-#about img {
-  width: 100%;
-  margin-top: -30px;
+#about img.background {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 100%;
+  max-height: 100%;
 }
 
 
