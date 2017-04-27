@@ -137,7 +137,7 @@
           <div class="description">
             <h1>International Lyon Model United Nations</h1>
             <h2>Wordpress Theme</h2>
-            <a href="http://ilymun.org" target="_blank" class="underline_link_animation">Click to see live version</a>
+            <a href="http://ilymun.org" target="_blank" class="underline_link_animation">Check out a live version of the website</a>
           </div>
           <div class="content">
             <img src="img/mac-mockup.png" alt="" class="mockup">
@@ -154,6 +154,19 @@
           <div class="description">
             <h1>CryptoHub</h1>
             <h2>Android Application</h2>
+            <a href="https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik" target="_blank" class="underline_link_animation">Check out the extension on the Chrome Store</a>
+            <button style="visibility:hidden;" class="show-on-chrome">Install Chrome extension now</button>
+            <script type="text/javascript">
+              var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+              if (isChrome) {
+                $(".show-on-chrome").show();
+              }
+              chrome.webstore.install(https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik, function(){
+                // installed successfully
+              }, function(){
+                // failure to install
+              });
+            </script>
           </div>
           <div class="content">
             <img src="img/cryptohub.png" alt="" class="mockup">
