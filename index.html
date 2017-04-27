@@ -155,16 +155,21 @@
             <h1>CryptoHub</h1>
             <h2>Android Application</h2>
             <a href="https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik" target="_blank" class="underline_link_animation">Check out the extension on the Chrome Store</a>
-            <button style="visibility:hidden;" class="show-on-chrome">Install Chrome extension now</button>
+            <button style="visibility:hidden;" class="mui-button show-on-chrome" id="install-line-number-extension">
+              <div class="ripple"></div>
+              <p>Install extension</p>
+            </button>
             <script type="text/javascript">
               var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
               if (isChrome) {
-                $(".show-on-chrome").show();
+                $(".show-on-chrome").css('visibility','visible');
               }
-              chrome.webstore.install(https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik, function(){
-                // installed successfully
-              }, function(){
-                // failure to install
+              $("#install-line-number-extension").click(function(){
+                chrome.webstore.install("https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik", function(){
+                  // installed successfully
+                }, function(){
+                  // failure to install
+                });
               });
             </script>
           </div>

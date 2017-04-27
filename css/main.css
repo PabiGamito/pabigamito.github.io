@@ -13,8 +13,8 @@ body {
 nav a {
   color: white;
   text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Josefin Sans', sans-serif;
+  /*text-transform: uppercase;*/
+  /*font-family: 'Josefin Sans', sans-serif;*/
 }
 nav .nav-item {
   position: absolute;
@@ -95,7 +95,7 @@ nav .nav-item.bottom-left {
     position: absolute;
 }
 .video-container .filter {
-    z-index: 100;
+    z-index: 1;
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
     width: 100%;
@@ -221,6 +221,11 @@ typing is handles by JS
 .icon-scroll.dark:before {
   background: #8e8e8e;
 }
+.bottom-text-help {
+  position: absolute;
+  bottom: 25px;
+  color: white;
+}
 
 
 @-webkit-keyframes scroll {
@@ -266,6 +271,107 @@ typing is handles by JS
   to {-moz-transform: translate(0, -0px);}
 }
 
+a.underline_link_animation {
+  text-decoration: none;
+  position: relative;
+  -moz-transition: ease-out 0.3s 0.1s;
+  -o-transition: ease-out 0.3s 0.1s;
+  -webkit-transition: ease-out 0.3s;
+  -webkit-transition-delay: 0.1s;
+  transition: ease-out 0.3s 0.1s;
+}
+a.underline_link_animation::after {
+  height: 2px;
+  width: 100%;
+  background: white;
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+a.underline_link_animation:hover::after {
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.mui-button {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 150px;
+  height: 50px;
+  border: none;
+  background: #F85F73;
+  color: #FBE8D3;
+  box-shadow: 0 0 10px 0.5px transparent;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.mui-button:hover {
+  box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
+  transform: scale(0.98);
+  background: #ec5a6d;
+  cursor: pointer;
+}
+.mui-button:active, .mui-button:focus {
+  outline: none;
+}
+.mui-button .ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@keyframes ripple {
+  from {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(250);
+    -moz-transform: scale(250);
+    -ms-transform: scale(250);
+    -o-transform: scale(250);
+    transform: scale(250);
+  }
+}
+.mui-button .ripple .circle {
+  position: absolute;
+  background: rgba(251, 232, 211, 0.2);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple 0.75s 1;
+  top: 50%;
+  left: 50%;
+}
+.mui-button p {
+  z-index: 1;
+}
+
 #content-wrapper {
   max-width: 100%;
   max-width: 100vw;
@@ -275,7 +381,7 @@ typing is handles by JS
   background: white;
   margin: -20px 0 -20px 0;
   padding: 20px 0 20px 0;
-  z-index: 1000;
+  z-index: 2;
   display: block;
   width: 100%;
   width: 100vw;
@@ -298,6 +404,37 @@ typing is handles by JS
     padding: 15px;
   }
 }
+nav {
+  width: 100vw;
+  padding: 15px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+/*nav#side-nav {
+  position: fixed;
+  top: 50%;
+  z-index: 3;
+  transform-origin: left top;
+  transform: rotate(-90deg) translateX(-50%);
+  background: black;
+}
+nav#side-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav#side-nav ul li {
+  float: left;
+  margin: 10px;
+}*/
 
 
 section#about {
@@ -349,18 +486,26 @@ section.portfolio-element .content {
 }
 section.portfolio-element .mockup {
   max-width: 100%;
-  height: auto;
+  max-height: 60vh;
 }
 section.portfolio-element .mockup-content {
   position: absolute;
-  top: 6%;
-  left: 5%;
-  width: 90%;
 }
 section.portfolio-element .mockup-content img {
   max-width: 100%;
   height: auto;
 }
+section.portfolio-element .mockup-content.desktop {
+  top: 6%;
+  left: 5%;
+  width: 90%;
+}
+section.portfolio-element .mockup-content.mobile {
+  top: 12%;
+  left: 5%;
+  width: 70%;
+}
+
 section#ilymun {
   background: #3498db;
 }
@@ -386,6 +531,24 @@ section#portfolio h1 {
   height: 100%;
   width: 100vw;
   height: 100vh;
+}
+
+section#contact h1 {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  vertical-align: middle;
+}
+section#contact p {
+  font-size: 24px;
+  color: #8e8e8e;
+  font-weight: 300;
+  margin-top: 0;
+}
+section#contact p span {
+  color: black;
 }
 
 /*Hexagon Grid*/
