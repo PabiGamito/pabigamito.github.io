@@ -54,6 +54,14 @@
       </div>
     </div>
 
+    <!-- <nav id="side-nav">
+      <ul>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact me</a></li>
+      </ul>
+    </nav> -->
+
     <!-- <nav>
       <div class="nav-item top-left">
         <a href="#about">About me</a>
@@ -74,6 +82,9 @@
       <div class="video-container">
         <div class="filter"></div>
         <video autoplay loop class="fullScreen" id="landing-video">
+          <div class="blue-overlay" style="background: rgba(10, 50, 200, 0.5); height: 100vh; width: 100vw;">
+
+          </div>
           <source src="video/Love-Coding.mp4" type="video/mp4" /><!-- Your browser does not support the video tag. I suggest you upgrade your browser. -->
           <!-- <source src="video/Love-Coding.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser. -->
         </video>
@@ -91,8 +102,16 @@
           <h2><strong>Pablo Gamito</strong></h2>
           <h3>Developer</h3>
           <p class="type-writer-text">I enjoy <span class="txt-rotate" data-period="1000" data-rotate='[ "building software", "working with people", "learning new things", "innovating", "solving problems" ]'></span></p>
+          <nav>
+            <ul>
+              <li><a href="#about" class="underline_link_animation">About me</a></li>
+              <li><a href="#portfolio" class="underline_link_animation">Portfolio</a></li>
+              <li><a href="#contact" class="underline_link_animation">Contact me</a></li>
+            </ul>
+          </nav>
         </div>
-        <div class='icon-scroll'><div/>
+        <div class='icon-scroll'></div>
+        <p class="bottom-text-help">Please Scroll</p>
       </section>
       <section id="about" class="full-page">
         <div class="container">
@@ -110,7 +129,7 @@
             <li><a class="soc-quora soc-icon-last" target="_blank" href="https://www.quora.com/profile/Pablo-Gamito"></a></li>
           </ul>
         </div>
-        <div class='icon-scroll dark'><div/>
+        <div class='icon-scroll dark'></div>
       </section>
 
       <section id="ilymun" class="full-page portfolio-element">
@@ -118,15 +137,16 @@
           <div class="description">
             <h1>International Lyon Model United Nations</h1>
             <h2>Wordpress Theme</h2>
+            <a href="http://ilymun.org" target="_blank" class="underline_link_animation">Click to see live version</a>
           </div>
           <div class="content">
             <img src="img/mac-mockup.png" alt="" class="mockup">
-            <div class="mockup-content">
-              <a href="http://ilymun.org"><img src="img/ilymun.gif" alt=""></a>
+            <div class="mockup-content desktop">
+              <a href="http://ilymun.org" target="_blank"><img src="img/ilymun.gif" alt=""></a>
             </div>
           </div>
         </div>
-        <div class='icon-scroll'><div/>
+        <div class='icon-scroll'></div>
       </section>
 
       <section id="cryptohub" class="full-page portfolio-element">
@@ -135,8 +155,11 @@
             <h1>CryptoHub</h1>
             <h2>Android Application</h2>
           </div>
+          <div class="content">
+            <img src="img/cryptohub.png" alt="" class="mockup">
+          </div>
         </div>
-        <div class='icon-scroll'><div/>
+        <div class='icon-scroll'></div>
       </section>
 
       <section id="wake-walk" class="full-page portfolio-element">
@@ -146,7 +169,7 @@
             <h2>Android Application</h2>
           </div>
         </div>
-        <div class='icon-scroll'><div/>
+        <div class='icon-scroll'></div>
       </section>
 
       <section id="line-numbers" class="full-page portfolio-element">
@@ -156,12 +179,13 @@
             <h2>Google Chrome Extension</h2>
           </div>
         </div>
-        <div class='icon-scroll'><div/>
+        <div class='icon-scroll'></div>
       </section>
 
-      <section id="contact-me" class="full-page">
+      <section id="contact" class="full-page">
         <div class="container">
           <h1>Contact Me</h1>
+          <p><span>Email:</span> <a href="mailto:pablogamito@gmail.com" class="underline_link_animation">pablogamito@gmail.com</a></p>
         </div>
       </section>
       <!-- <section id="services" class="full-page">
