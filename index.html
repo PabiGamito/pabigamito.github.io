@@ -20,10 +20,15 @@
 
     <link rel="stylesheet" href="css/loader.css">
 
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- Load fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <!-- Load Main CSS -->
     <link rel="stylesheet" href="css/main.css">
+    <!-- Load css libs -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/social-icons.css">
   </head>
@@ -105,6 +110,7 @@
           <nav>
             <ul>
               <li><a href="#about" class="underline_link_animation">About me</a></li>
+              <li><a href="#skills" class="underline_link_animation">Skills</a></li>
               <li><a href="#portfolio" class="underline_link_animation">Portfolio</a></li>
               <li><a href="#contact" class="underline_link_animation">Contact me</a></li>
             </ul>
@@ -113,6 +119,7 @@
         <div class='icon-scroll'></div>
         <p class="bottom-text-help">Please Scroll</p>
       </section>
+
       <section id="about" class="full-page">
         <div class="container">
           <h1>I am</h1>
@@ -123,8 +130,8 @@
             <li><a class="soc-github" target="_blank" href="https://github.com/PabiGamito"></a></li>
             <li><a class="soc-linkedin" target="_blank" href="https://www.linkedin.com/in/pablo-g-6446a9125?trk=hp-identity-name"></a></li>
             <li><a class="soc-instagram" target="_blank" href="https://instagram.com/pabigamito"></a></li>
-            <li><a class="soc-facebook" target="_blank" href="https://www.facebook.com/pablo.gamito"></a></li>
-            <li><a class="soc-pinterest" target="_blank" href="https://pinterest.com/pablogamito/"></a></li>
+            <!-- <li><a class="soc-facebook" target="_blank" href="https://www.facebook.com/pablo.gamito"></a></li> -->
+            <!-- <li><a class="soc-pinterest" target="_blank" href="https://pinterest.com/pablogamito/"></a></li> -->
             <li><a class="soc-twitter" target="_blank" href="https://twitter.com/pabigamito"></a></li>
             <li><a class="soc-quora soc-icon-last" target="_blank" href="https://www.quora.com/profile/Pablo-Gamito"></a></li>
           </ul>
@@ -132,18 +139,48 @@
         <div class='icon-scroll dark'></div>
       </section>
 
+      <!-- <section id="skills" class="full-page">
+
+      </section> -->
+
       <section id="ilymun" class="full-page portfolio-element">
         <div class="container">
           <div class="description">
             <h1>International Lyon Model United Nations</h1>
             <h2>Wordpress Theme</h2>
+            <p>
+              Designed for the non-profit ILYMUN organization, which hosts anual model united nation conferences for over 500 students anually.
+            </p>
             <a href="http://ilymun.org" target="_blank" class="underline_link_animation">Check out a live version of the website</a>
           </div>
           <div class="content">
-            <img src="img/mac-mockup.png" alt="" class="mockup">
-            <div class="mockup-content desktop">
-              <a href="http://ilymun.org" target="_blank"><img src="img/ilymun.gif" alt=""></a>
-            </div>
+            <a href="http://ilymun.org" target="_blank">
+              <img src="img/ilymun.png" alt="" class="mockup">
+            </a>
+          </div>
+        </div>
+        <div class='icon-scroll'></div>
+      </section>
+
+      <section id="line-numbers" class="full-page portfolio-element">
+        <div class="container">
+          <div class="description">
+            <h1>Line Numbers for Google Docs</h1>
+            <h2>Google Chrome Extension</h2>
+            <p>
+              Built and designed to simply add line numbers to your Google Documents when you need them. That's right, it doesn't come out of the box with Google Docs, so here it is.
+            </p>
+            <a href="https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik" target="_blank" class="underline_link_animation">Check out the extension on the Chrome Store</a>
+            <br>
+            <button style="visibility:none;" class="mui-button show-on-chrome" id="install-line-number-extension">
+              <div class="ripple"></div>
+              <p>Install extension</p>
+            </button>
+          </div>
+          <div class="content">
+            <a href="https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik" target="_blank">
+              <img src="img/line-numbers-for-gdocs.png" alt="" class="mockup">
+            </a>
           </div>
         </div>
         <div class='icon-scroll'></div>
@@ -154,26 +191,6 @@
           <div class="description">
             <h1>CryptoHub</h1>
             <h2>Android Application</h2>
-            <a href="https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik" target="_blank" class="underline_link_animation">Check out the extension on the Chrome Store</a>
-            <button style="visibility:none;" class="mui-button show-on-chrome" id="install-line-number-extension">
-              <div class="ripple"></div>
-              <p>Install extension</p>
-            </button>
-            <script type="text/javascript">
-              $(document).ready(function(){
-                var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-                if (isChrome) {
-                  $(".show-on-chrome").css('visibility','visible');
-                }
-                $("#install-line-number-extension").click(function(){
-                  chrome.webstore.install("https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik", function(){
-                    // installed successfully
-                  }, function(){
-                    // failure to install
-                  });
-                });
-              });
-            </script>
           </div>
           <div class="content">
             <img src="img/cryptohub.png" alt="" class="mockup">
@@ -187,16 +204,6 @@
           <div class="description">
             <h1>Wake Walk</h1>
             <h2>Android Application</h2>
-          </div>
-        </div>
-        <div class='icon-scroll'></div>
-      </section>
-
-      <section id="line-numbers" class="full-page portfolio-element">
-        <div class="container">
-          <div class="description">
-            <h1>Line Numbers for Google Docs</h1>
-            <h2>Google Chrome Extension</h2>
           </div>
         </div>
         <div class='icon-scroll'></div>
@@ -222,6 +229,21 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (isChrome) {
+          $(".show-on-chrome").css('visibility','visible');
+        }
+        $("#install-line-number-extension").click(function(){
+          chrome.webstore.install("https://chrome.google.com/webstore/detail/line-numbers-for-google-d/mblodabbcapnkgcfnddfpfaamjckjlik", function(){
+            // installed successfully
+          }, function(){
+            // failure to install
+          });
+        });
+      });
+    </script>
 
   </body>
 </html>
