@@ -394,16 +394,6 @@ a.underline_link_animation:hover::after {
 #content-wrapper section.dark {
   background: #F2F2F2;
 }
-#content-wrapper section .container {
-  width: 100%;
-  max-width: 1080px;
-  align-self: center;
-}
-@media (max-width: 1110px) {
-  #content-wrapper section .container {
-    padding: 15px;
-  }
-}
 nav {
   width: 100vw;
   padding: 15px;
@@ -436,33 +426,14 @@ nav#side-nav ul li {
   margin: 10px;
 }*/
 
-
-section#about {
-  background: #ffffff;
+/*GENERAL MODIFIERS*/
+/*Default, Extra large screens*/
+#content-wrapper section .container {
+  width: 100%;
+  max-width: 1200px;
+  align-self: center;
+  padding: 15px;
 }
-/*section#about {
-  background-image: url(../img/pablo-gamito.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-}*/
-section#about h1 {
-  font-size: 72px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-  vertical-align: middle;
-}
-section#about p {
-  font-size: 24px;
-  color: #8e8e8e;
-  font-weight: 300;
-  margin-top: 0;
-}
-section#about p span {
-  color: black;
-}
-
 section.portfolio-element {
   color: white;
 }
@@ -494,16 +465,77 @@ section.portfolio-element .mockup-content {
 section.portfolio-element .mockup-content img {
   max-width: 100%;
   height: auto;
+  max-height: 75vh;
 }
-section.portfolio-element .mockup-content.desktop {
-  top: 6%;
-  left: 5%;
-  width: 90%;
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
 }
-section.portfolio-element .mockup-content.mobile {
-  top: 12%;
-  left: 5%;
-  width: 70%;
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  section.portfolio-element .description {
+    width: 45%;
+    float: left;
+  }
+  section.portfolio-element .description h1 {
+    font-size: 48px;
+    margin-bottom: 0px;
+  }
+  section.portfolio-element .description h2 {
+    font-size: 32px;
+    margin-top: 0px;
+    font-weight: 300;
+  }
+  section.portfolio-element .content {
+    position: relative;
+    width: 50%;
+    float: left;
+  }
+  section.portfolio-element .mockup {
+    max-width: 100%;
+    max-height: 60vh;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+
+/*SPECIFIC MODIFIERS*/
+
+section#about {
+  background: #ffffff;
+}
+/*section#about {
+  background-image: url(../img/pablo-gamito.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}*/
+section#about h1 {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  vertical-align: middle;
+}
+section#about p {
+  font-size: 24px;
+  color: #8e8e8e;
+  font-weight: 300;
+  margin-top: 0;
+}
+section#about p span {
+  color: black;
 }
 
 section#ilymun {
