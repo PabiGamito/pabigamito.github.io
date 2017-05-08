@@ -379,7 +379,7 @@ a.underline_link_animation:hover::after {
 
 #content-wrapper section {
   background: white;
-  margin: -20px 0 -20px 0;
+  /*margin: -20px 0 -20px 0;*/
   padding: 20px 0 20px 0;
   z-index: 2;
   display: block;
@@ -436,11 +436,13 @@ nav#side-nav ul li {
 }
 section.portfolio-element {
   color: white;
+  display: table;
+  table-layout: fixed;
 }
-section.portfolio-element .description {
+/*section.portfolio-element .description {
   width: 45%;
   float: left;
-}
+}*/
 section.portfolio-element .description h1 {
   font-size: 48px;
   margin-bottom: 0px;
@@ -450,10 +452,27 @@ section.portfolio-element .description h2 {
   margin-top: 0px;
   font-weight: 300;
 }
+section.portfolio-element .description hr {
+	background: transparent;
+  width: 75%;
+	border-top: 2px dashed white;
+  align: left;
+}
+section.portfolio-element .description p {
+  font-size: 24px;
+  margin-top: 0px;
+  font-weight: 300;
+}
+section.portfolio-element .description a {
+  font-size: 20px;
+  font-weight: 300;
+}
 section.portfolio-element .content {
-  position: relative;
-  width: 50%;
-  float: left;
+  display: table-cell;
+  vertical-align: middle;
+  /*position: relative;
+  width: 100%;
+  float: left;*/
 }
 section.portfolio-element .mockup {
   max-width: 100%;
@@ -475,7 +494,7 @@ section.portfolio-element .mockup-content img {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-  section.portfolio-element .description {
+  /*section.portfolio-element .description {
     width: 45%;
     float: left;
   }
@@ -496,7 +515,7 @@ section.portfolio-element .mockup-content img {
   section.portfolio-element .mockup {
     max-width: 100%;
     max-height: 60vh;
-  }
+  }*/
 }
 
 /* Small Devices, Tablets */
@@ -563,6 +582,47 @@ section#portfolio h1 {
   height: 100%;
   width: 100vw;
   height: 100vh;
+}
+ul.soc {
+  margin-top: 18px;
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .portfolio-element.full-page {
+    height: auto;
+    padding: 5px 5px 35px 5px;
+  }
+  .icon-scroll {
+    display: none;
+  }
+  section.portfolio-element .description {
+    margin-bottom: 8px;
+  }
+  section.portfolio-element .description h1 {
+    font-size: 32px;
+  }
+  section.portfolio-element .description h2 {
+    font-size: 24px;
+  }
+  section.portfolio-element .description p {
+    font-size: 18px;
+  }
+  section.portfolio-element .description a {
+    font-size: 16px;
+  }
+  section#about .container h1,  section#about .container p{
+    text-align: center;
+  }
+  ul.soc {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
 }
 
 section#contact h1 {
