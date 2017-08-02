@@ -109,7 +109,7 @@ $(document).on('mousewheel DOMMouseScroll', function (e) {
     //get the delta to determine the mousewheel scrol UP and DOWN
     var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
     mouseWheelScroll(delta);
-  // }
+  }
   
 });
 
