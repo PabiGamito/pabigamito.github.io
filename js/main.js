@@ -99,15 +99,21 @@ var scrolling = false;
 
 /* handle the mousewheel event together with
  DOMMouseScroll to work on cross browser */
+var lastScrollEventTS = 0;
 $(document).on('mousewheel DOMMouseScroll', function (e) {
   e.preventDefault(); //prevent the default mousewheel scrolling
-  //get the delta to determine the mousewheel scrol UP and DOWN
-  var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
-  mouseWheelScroll(delta);
+  
+  // Check to see it isn't a scroll directly after the last one = continous scrolling mouse or mouse pad = accidental down scrolling
+  if (Date.now() - 100 < lastScrollEventTS) {
+    lastScrollEventTS = Date.now();
+    //get the delta to determine the mousewheel scrol UP and DOWN
+    var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
+    mouseWheelScroll(delta);
+   }
+  
 });
 
 function mouseWheelScroll(delta) {
-  console.log(Date.now(), "mouse scroll " + delta);
   if (!scrolling) {
     scrolling = true;
     var active = $('section.active');
