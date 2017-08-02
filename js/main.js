@@ -107,6 +107,7 @@ $(document).on('mousewheel DOMMouseScroll', function (e) {
 });
 
 function mouseWheelScroll(delta) {
+  console.log(Date.now(), "mouse scroll " + delta);
   if (!scrolling) {
     scrolling = true;
     var active = $('section.active');
@@ -125,25 +126,18 @@ function mouseWheelScrollDownHandler(active) {
   next = active.next();
   //check if the next section exist and animate the anchoring
   if (next.length) {
-   /*setTimeout is here to prevent the scrolling animation
-    to jump to the topmost or bottom when
-    the user scrolled very fast.*/
-    var timer = setTimeout(function () {
-      /* animate the scrollTop by passing
-      the elements offset top value */
-      $('body, html').animate({
-        scrollTop: next.offset().top
-      }, 500, function(){
-        // Animation complete
-        scrolling = false;
-      });
+    /* animate the scrollTop by passing
+    the elements offset top value */
+    $('body, html').animate({
+      scrollTop: next.offset().top
+    }, 500, function(){
+      // Animation complete
+      scrolling = false;
+    });
 
-      // move the indicator 'active' class
-      next.addClass('active')
-        .siblings().removeClass('active');
-
-      clearTimeout(timer);
-    }, 200);
+    // move the indicator 'active' class
+    next.addClass('active')
+      .siblings().removeClass('active');
   } else {
     scrolling = false;
   }
@@ -157,19 +151,15 @@ function mouseWheelScrollUpHandler(active) {
   prev = active.prev();
 
   if (prev.length) {
-    var timer = setTimeout(function () {
-      $('body, html').animate({
-        scrollTop: prev.offset().top
-      }, 500, function(){
-        // Animation complete
-        scrolling = false;
-      });
+    $('body, html').animate({
+      scrollTop: prev.offset().top
+    }, 500, function(){
+      // Animation complete
+      scrolling = false;
+    });
 
-      prev.addClass('active')
-          .siblings().removeClass('active');
-
-      clearTimeout(timer);
-    }, 200);
+    prev.addClass('active')
+        .siblings().removeClass('active');
   } else {
     scrolling = false;
   }
