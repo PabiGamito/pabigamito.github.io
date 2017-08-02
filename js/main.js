@@ -105,12 +105,14 @@ $(document).on('mousewheel DOMMouseScroll', function (e) {
   
   // Check to see it isn't a scroll directly after the last one = continous scrolling mouse or mouse pad = accidental down scrolling
   if (Date.now() > lastScrollEventTS + 100) {
+    console.log(Date.now(), "vs " + lastScrollEventTS);
     //get the delta to determine the mousewheel scrol UP and DOWN
     var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
     mouseWheelScroll(delta);
   }
   
   lastScrollEventTS = Date.now();
+  console.log("Scrolling", lastScrollEventTS);
   
 });
 
