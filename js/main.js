@@ -93,80 +93,80 @@ window.onload = function() {
 // $('section').height($(window).height());
 /*set the class 'active' to the first element
  this will serve as our indicator*/
-$('section').first().addClass('active');
-// defines scrolling variable to false, when true doesn't do anything on mouse wheel to prevent overload
-var scrolling = false;
+// $('section').first().addClass('active');
+// // defines scrolling variable to false, when true doesn't do anything on mouse wheel to prevent overload
+// var scrolling = false;
 
-/* handle the mousewheel event together with
- DOMMouseScroll to work on cross browser */
-var lastScrollEventTS = 0;
-$(document).on('mousewheel DOMMouseScroll', function (e) {
-  e.preventDefault(); //prevent the default mousewheel scrolling
+// /* handle the mousewheel event together with
+//  DOMMouseScroll to work on cross browser */
+// var lastScrollEventTS = 0;
+// $(document).on('mousewheel DOMMouseScroll', function (e) {
+//   e.preventDefault(); //prevent the default mousewheel scrolling
   
-  // Check to see it isn't a scroll directly after the last one = continous scrolling mouse or mouse pad = accidental down scrolling
-  if (Date.now() > lastScrollEventTS + 1000) {
-    lastScrollEventTS = Date.now();
-    //get the delta to determine the mousewheel scrol UP and DOWN
-    var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
-    mouseWheelScroll(delta);
-  }
+//   // Check to see it isn't a scroll directly after the last one = continous scrolling mouse or mouse pad = accidental down scrolling
+//   if (Date.now() > lastScrollEventTS + 1000) {
+//     lastScrollEventTS = Date.now();
+//     //get the delta to determine the mousewheel scrol UP and DOWN
+//     var delta = e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0 ? 1 : -1;
+//     mouseWheelScroll(delta);
+//   }
   
-});
+// });
 
-function mouseWheelScroll(delta) {
-  if (!scrolling) {
-    scrolling = true;
-    var active = $('section.active');
+// function mouseWheelScroll(delta) {
+//   if (!scrolling) {
+//     scrolling = true;
+//     var active = $('section.active');
 
-    //if the delta value is negative, the user is scrolling down
-    if (delta < 0) {
-      mouseWheelScrollDownHandler(active);
-    } else {
-      mouseWheelScrollUpHandler(active);
-    }
-  }
-}
+//     //if the delta value is negative, the user is scrolling down
+//     if (delta < 0) {
+//       mouseWheelScrollDownHandler(active);
+//     } else {
+//       mouseWheelScrollUpHandler(active);
+//     }
+//   }
+// }
 
-function mouseWheelScrollDownHandler(active) {
-  //mousewheel down handler
-  next = active.next();
-  //check if the next section exist and animate the anchoring
-  if (next.length) {
-    /* animate the scrollTop by passing
-    the elements offset top value */
-    $('body, html').animate({
-      scrollTop: next.offset().top
-    }, 500, function(){
-      // Animation complete
-      scrolling = false;
-    });
+// function mouseWheelScrollDownHandler(active) {
+//   //mousewheel down handler
+//   next = active.next();
+//   //check if the next section exist and animate the anchoring
+//   if (next.length) {
+//     /* animate the scrollTop by passing
+//     the elements offset top value */
+//     $('body, html').animate({
+//       scrollTop: next.offset().top
+//     }, 500, function(){
+//       // Animation complete
+//       scrolling = false;
+//     });
 
-    // move the indicator 'active' class
-    next.addClass('active')
-      .siblings().removeClass('active');
-  } else {
-    scrolling = false;
-  }
-}
+//     // move the indicator 'active' class
+//     next.addClass('active')
+//       .siblings().removeClass('active');
+//   } else {
+//     scrolling = false;
+//   }
+// }
 
-function mouseWheelScrollUpHandler(active) {
-  //mousewheel up handler
-  /*similar logic to the mousewheel down handler
-  except that we are animate the anchoring
-  to the previous sibling element*/
-  prev = active.prev();
+// function mouseWheelScrollUpHandler(active) {
+//   //mousewheel up handler
+//   /*similar logic to the mousewheel down handler
+//   except that we are animate the anchoring
+//   to the previous sibling element*/
+//   prev = active.prev();
 
-  if (prev.length) {
-    $('body, html').animate({
-      scrollTop: prev.offset().top
-    }, 500, function(){
-      // Animation complete
-      scrolling = false;
-    });
+//   if (prev.length) {
+//     $('body, html').animate({
+//       scrollTop: prev.offset().top
+//     }, 500, function(){
+//       // Animation complete
+//       scrolling = false;
+//     });
 
-    prev.addClass('active')
-        .siblings().removeClass('active');
-  } else {
-    scrolling = false;
-  }
-}
+//     prev.addClass('active')
+//         .siblings().removeClass('active');
+//   } else {
+//     scrolling = false;
+//   }
+// }
