@@ -1,0 +1,17 @@
+{
+  "name": "pabigamito.github.io",
+  "version": "1.0.0",
+  "main": "index.pug",
+  "repository": "git@github.com:PabiGamito/pabigamito.github.io.git",
+  "author": "Pablo Gamito <pablo@gamito.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "parcel": "^2.0.0-alpha.3.2",
+    "pug": "^2.0.4",
+    "sass": "^1.26.3"
+  },
+  "scripts": {
+    "dev": "yarn parcel index.pug"
+  }
+}
