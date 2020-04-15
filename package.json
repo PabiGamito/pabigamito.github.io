@@ -1,17 +1,22 @@
 {
   "name": "pabigamito.github.io",
   "version": "1.0.0",
-  "main": "index.pug",
+  "main": "dist/index.html",
   "repository": "git@github.com:PabiGamito/pabigamito.github.io.git",
   "author": "Pablo Gamito <pablo@gamito.me>",
   "license": "MIT",
+  "scripts": {
+    "dev": "npx parcel src/index.pug",
+    "build": "npx parcel build src/index.pug"
+  },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fullhuman/postcss-purgecss": "^2.1.2",
+    "autoprefixer": "^9.7.6",
+    "cssnano": "^4.1.10",
     "parcel": "^2.0.0-alpha.3.2",
     "pug": "^2.0.4",
-    "sass": "^1.26.3"
-  },
-  "scripts": {
-    "dev": "yarn parcel index.pug"
+    "sass": "^1.26.3",
+    "tailwindcss": "^1.2.0"
   }
 }
